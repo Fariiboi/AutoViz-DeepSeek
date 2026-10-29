@@ -1,0 +1,88 @@
+# ============================================================
+# AutoViz — .gitignore (security-first)
+# 凭证、原始数据、生成物一律不入库
+# ============================================================
+
+# ---------- 凭证与本地配置 ----------
+.env
+.env.*
+# 仅保留无密钥的占位符模板
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials.json
+service-account*.json
+
+# ---------- 数据文件（可能含业务敏感信息 / 体积过大）----------
+*.csv
+*.CSV
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.arrow
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# ---------- 运行输出 / 临时工作区 ----------
+workspace/
+autoviz-output/
+output/
+results/
+tmp/
+temp/
+logs/
+*.log
+pgdata/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+.ipynb_checkpoints/
+
+# ---------- Node ----------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# ---------- IDE / 操作系统 ----------
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- 模型缓存 / 大文件兜底 ----------
+.cache/
+.huggingface/
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.bin
+*.safetensors
